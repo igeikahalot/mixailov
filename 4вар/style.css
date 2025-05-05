@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+/* color */
+:root {
+    --background-first: #F6F7F7;
+    --background-secondary: #ECEDED;
+    --card: #FEFFFF;
+    --stroke: #D8D9D9;
+    --h1: #1D1D1B;
+    --text: #606060;
+    --akcent: #0074D9;
+    --hover: #0A60C5;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
