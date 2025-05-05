@@ -14,6 +14,7 @@
     --h1: #1D1D1B;
     --text: #606060;
     --akcent: #0074D9;
+    --header-akcent: #4FADFF;
     --hover: #0A60C5;
 }
 
@@ -120,7 +121,7 @@ img {
 /* Header Styles */
 header {
     padding: 20px 0;
-    background-color: white;
+    background-color: var(--card);
 }
 
 .header-container {
@@ -130,9 +131,7 @@ header {
 }
 
 .logo h1 {
-    font-size: 24px;
     margin-bottom: 0;
-    font-weight: 600;
 }
 
 .logo p {
@@ -141,8 +140,8 @@ header {
 }
 
 .phone a {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 600;
     color: #333;
     display: flex;
     align-items: center;
@@ -150,13 +149,12 @@ header {
 
 .phone i {
     margin-right: 8px;
-    color: #0078d4;
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #0078d4;
-    padding: 15px 0;
+    background-color: var(--header-akcent);
+    padding: 10px 0;
 }
 
 .nav-menu {
@@ -165,8 +163,9 @@ nav {
 }
 
 .nav-menu li a {
-    color: white;
-    font-weight: 500;
+    color: var(--background-first);
+    font-weight: 400;
+    font-size: 16px;
     padding: 5px 10px;
     transition: all 0.3s ease;
 }
@@ -199,7 +198,8 @@ nav {
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 600px;
+    max-width: 870px;
+    margin: 0px;
 }
 
 .call-button {
@@ -212,9 +212,9 @@ nav {
 }
 
 .hero-text h2 {
-    font-size: 42px;
+    font-size: 70px;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .hero-text p {
