@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* color */
@@ -16,11 +17,7 @@
     --akcent: #0074D9;
     --header-akcent: #4FADFF;
     --hover: #0A60C5;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
+    --shadow: 5px 10px 20px 0px rgba(35, 63, 104, 0.15);
 }
 
 .container {
@@ -46,7 +43,7 @@ h2 {
 
 h3 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 24px;
     letter-spacing: 0;
 }
@@ -98,15 +95,13 @@ img {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .primary-btn {
     background-color: var(--akcent);
     color: var(--background-first);
+    width: 100%;
 }
 
 .primary-btn:hover {
@@ -153,7 +148,7 @@ nav {
     z-index: 1000;
     background-color: var(--header-akcent);
     padding: 10px 0;
-    box-shadow: 5px 10px 20px 0px rgba(35, 63, 104, 0.15);
+    box-shadow: var(--shadow);
 }
 
 .nav-menu {
@@ -243,7 +238,7 @@ nav {
     background-color: var(--card);
     padding: 30px;
     border-radius: 5px;
-    box-shadow: 5px 10px 20px 0px rgba(35, 63, 104, 0.15);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease;
     min-width: 270px;
     gap: 10px;
@@ -344,8 +339,8 @@ nav {
 
 /* Work Stages Section */
 .stages {
-    padding: 80px 0;
-    background-color: #f9f9f9;
+    padding: 0 0 5vh 0;
+    background-color: var(--background-first);
     position: relative;
 }
 
@@ -355,19 +350,17 @@ nav {
 
 .stage-line {
     position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        #0078d4 0%, #0078d4 25%, 
-        transparent 25%, transparent 30%, 
-        #0078d4 30%, #0078d4 50%, 
-        transparent 50%, transparent 55%, 
-        #0078d4 55%, #0078d4 75%, 
-        transparent 75%, transparent 80%, 
-        #0078d4 80%, #0078d4 100%);
+    top: 20px;
+    left: -35vh;
+    width: calc(65vw + 35vw);
+    height: 257.78px;
     z-index: 1;
+    overflow: visible;
+}
+  
+.stage-line svg {
+    width: 100%;
+    height: 100%;
 }
 
 .stages-grid {
@@ -379,17 +372,25 @@ nav {
 }
 
 .stage-card {
-    background-color: white;
+    background-color: var(--card);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.stage-card h4 {
+    color: var(--text);
+    margin: 10px 0 20px 0;
+}
+
+.primary-btn h4 {
+    color: var(--background-first);
+    margin: 0;
 }
 
 .stage-number {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0078d4;
-    margin-bottom: 15px;
+    color: var(--header-akcent);
+    margin-bottom: 20px;
 }
 
 /* Portfolio Section */
@@ -421,7 +422,7 @@ nav {
     height: 40px;
     border-radius: 4px;
     background-color: #0078d4;
-    color: white;
+    color: var(--background-first);
     border: none;
     display: flex;
     align-items: center;
