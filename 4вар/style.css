@@ -525,37 +525,52 @@ nav {
 
 /* Discount Section */
 .discount {
-    padding: 80px 0;
-    background-color: #f5f5f5;
+    padding: 5vh 0 5vh 0;
+    background-color: var(--background-secondary);
 }
 
 .discount-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
 }
 
-.discount-text h2 {
-    font-size: 36px;
-    color: #0078d4;
-    font-weight: 600;
+.discount-text {
+    display: grid;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .discount-text h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: 500;
+    color: var(--text);
 }
 
-.discount-text p {
-    margin-bottom: 30px;
-    color: #666;
+.discount-text h4 {
+    color: var(--text);
 }
 
-.discount-image img {
-    border-radius: 8px;
-    width: 100%;
+.primary-btn h4 {
+    color: var(--background-first);
+    margin: 0;
+}
+
+.btn-limiter {
+    margin-top: 20px;
+    max-width: 230px;
+}
+
+.discount-image {
+    background-image: url('images/card1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--card);
+    /* padding: 10% 0; */
+    position: relative;
+    max-width: 570px;
+    min-height: 500px;
+    border-radius: 5px;
 }
 
 /* Reviews Section */
