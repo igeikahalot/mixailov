@@ -46,28 +46,28 @@ h2 {
 
 h3 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 24px;
     letter-spacing: 0;
 }
 
 h4 {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 22px;
     letter-spacing: 0;
 }
 
 h5 {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 19px;
     letter-spacing: 0;
 }
 
 h6 {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 16px;
     letter-spacing: 0;
 }
@@ -118,7 +118,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 21px 0;
     background-color: var(--card);
 }
 
@@ -134,19 +134,16 @@ header {
 
 .logo h5 {
     color: var(--text);
-
 }
 
 .phone a {
-    font-size: 32px;
-    font-weight: 600;
-    color: #333;
+    color: var(--h1);
     display: flex;
     align-items: center;
 }
 
-.phone i {
-    margin-right: 12px;
+.phone a {
+    gap: 12px;
 }
 
 /* Navigation Styles */
@@ -164,17 +161,10 @@ nav {
     justify-content: space-between;
 }
 
-.nav-menu li a {
+.nav-menu li h4 {
     color: var(--background-first);
-    font-weight: 100;
-    font-size: 16px;
     padding: 0px;
     transition: all 0.3s ease;
-}
-
-.nav-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
 }
 
 /* Hero Section */
@@ -185,7 +175,7 @@ nav {
     background-position: 0% 60%;
     height: 858px;
     color: white;
-    padding: 19vh 0;
+    padding: 10% 0;
     position: relative;
     min-height: 858px;
 }
@@ -265,7 +255,6 @@ nav {
 
 .advantage-card h4 {
     color: var(--text);
-    opacity: .7;
 }
 
 .advantage-card:hover {
@@ -286,7 +275,7 @@ nav {
 
 /* Services Section */
 .services {
-    padding: 80px 0;
+    padding: 0 0 8vh 0;
     background-color: var(--background-secondary);
 }
 
@@ -311,53 +300,45 @@ nav {
 .service-image {
     min-height: 300px;
     overflow: hidden;
-}
-
-.service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: 123%;
-    position: 0% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .services-description {
-    padding: 30px;
-}
-
-.service-card h3 {
-    margin-bottom: 10px;
+    margin: 30px 30px 20px 30px;
+    max-height: 146px;
+    height: 100%;
 }
 
 .service-card h4 {
+    margin-top: 10px;
     color: var(--text);
     opacity: .7;
 }
 
 .service-footer {
-    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #eee;
+    margin: 20px 30px 30px 30px;
 }
 
 .price {
-    font-weight: bold;
-    color: #0078d4;
+    color: var(--h1);
 }
 
 .service-link {
-    color: #0078d4;
     display: flex;
     align-items: center;
 }
 
-.service-link i {
-    margin-left: 5px;
-    transition: transform 0.3s ease;
+.service-link h4 {
+    color: var(--akcent);
+    margin: 0 10px 0 0;
+    transition: all 0.3s ease;
 }
 
-.service-link:hover i {
+.service-card:hover h4:first-child {
     transform: translateX(5px);
 }
 
