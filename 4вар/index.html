@@ -7,6 +7,7 @@
     <link rel="icon" href="images/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -49,7 +50,7 @@
             <div class="hero-text">
                 <h2>Откачка септика<br>в Пушкинском районе</h2>
                 <h3>Для современного мира граница обучения кадров не оставляет шанса для как самодостаточных, так и внешне зависимых концептуальных решений.</h3>
-                <button class="btn primary-btn"><h4>Оставить заявку</h4></button>
+                <div class="limiter"><button class="btn primary-btn"><h4>Оставить заявку</h4></button></div>
             </div>
         </div>
     </section>
@@ -138,28 +139,7 @@
         <div class="container">
             <h1 class="section-title">Этапы работы</h1>
             <div class="stages-container">
-                <div class="stage-line">
-                    <svg width="100%" height="260" viewBox="0 0 1920 260" preserveAspectRatio="none">
-                      <!-- Исходный вектор с пунктиром -->
-                      <path class="vector-path"
-                            d="M-307 258.761C-270.167 181.094 -146.6 25.3611 53 23.7611C302.5 21.7611 331 138.261 671 152.261C1011 166.261 966.5 38.2611 1236 5.76106C1505.5 -26.7389 1459.5 115.761 1745 172.261C1973.4 217.461 2162.17 92.0944 2228 23.7611"
-                            stroke="#606060"
-                            stroke-width="2"
-                            stroke-dasharray="12 10"
-                            opacity="0.3"
-                            fill="none"/>
-                      
-                      <!-- Круги слева (от большого к маленькому) -->
-                      <circle cx="65" cy="43" r="10" fill="#4FADFF" transform="translate(0 -10)"/> <!-- Самый большой -->
-                      <circle cx="160" cy="49" r="7.5" fill="#4FADFF" transform="translate(0 -7.5)"/>
-                      <circle cx="270" cy="75" r="5" fill="#4FADFF" transform="translate(0 -5)"/> <!-- Самый маленький -->
-                  
-                      <!-- Круги справа (от маленького к большому) -->
-                      <circle cx="1630" cy="157" r="5" fill="#4FADFF" transform="translate(0 -10)"/> <!-- Самый маленький -->
-                      <circle cx="1740" cy="197" r="7.5" fill="#4FADFF" transform="translate(0 -15)"/>
-                      <circle cx="1880" cy="210" r="10" fill="#4FADFF" transform="translate(0 -20)"/> <!-- Самый большой -->
-                    </svg>
-                </div>
+                <div class="stage-line"></div>
                 <div class="stages-grid">
                     <div class="stage-card">
                         <div class="stage-number"><h1>01/</h1></div>
@@ -203,93 +183,118 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <div class="portfolio-header">
-                <p class="portfolio-subtitle">Выполненные работы</p>
-                <h2 class="section-title">Название работы</h2>
-                <div class="portfolio-nav">
-                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <div class="portfolio-text">
+                        <h3 class="portfolio-subtitle">Выполненные работы</h3>
+                        <h1 class="portfolio-title">Название работы</h1>
+                    </div>
+                    <div class="portfolio-nav">
+                        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
+                        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="portfolio-characteristics">
-                <h3>Характеристики</h3>
-                <div class="characteristics-grid">
-                    <div class="characteristics-column">
-                        <div class="characteristic-item">
-                            <span class="blue-dot"></span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                
+                <div class="portfolio-characteristics">
+                    <h3>Характеристики</h3>
+                    <div class="characteristics-grid">
+                        <div class="characteristics-column">
+                            <div class="characteristic-item">
+                                <span class="blue-dot"></span>
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            </div>
+                            <div class="characteristic-item">
+                                <span class="blue-dot"></span>
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            </div>
+                            <div class="characteristic-item">
+                                <span class="blue-dot"></span>
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            </div>
                         </div>
-                        <div class="characteristic-item">
-                            <span class="blue-dot"></span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                        </div>
-                        <div class="characteristic-item">
-                            <span class="blue-dot"></span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                        </div>
-                    </div>
-                    <div class="characteristics-column">
-                        <div class="characteristic-item">
-                            <span class="blue-dot"></span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                        </div>
-                        <div class="characteristic-item">
-                            <span class="blue-dot"></span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                        </div>
-                        <div class="characteristic-item">
-                            <span class="blue-dot"></span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <div class="characteristics-column">
+                            <div class="characteristic-item">
+                                <span class="blue-dot"></span>
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            </div>
+                            <div class="characteristic-item">
+                                <span class="blue-dot"></span>
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            </div>
+                            <div class="characteristic-item">
+                                <span class="blue-dot"></span>
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="portfolio-gallery">
-                <div class="gallery-item">
-                    <img src="images/card1.png" alt="Выполненная работа 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/card2.png" alt="Выполненная работа 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/offer.png" alt="Выполненная работа 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/card3.png" alt="Выполненная работа 4">
-                </div>
-            </div>
-            
-            <div class="portfolio-pricing">
-                <div class="pricing-item">
-                    <div class="pricing-icon">
-                        <i class="fas fa-tools"></i>
+                
+                <div class="portfolio-gallery">
+                    <div class="gallery-item">
+                        <img src="images/card1.png" alt="Выполненная работа 1">
                     </div>
-                    <div class="pricing-details">
-                        <h3>Материалы</h3>
-                        <p>4000 руб.</p>
+                    <div class="gallery-item">
+                        <img src="images/card2.png" alt="Выполненная работа 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/offer.png" alt="Выполненная работа 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/card3.png" alt="Выполненная работа 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/card1.png" alt="Выполненная работа 5">
                     </div>
                 </div>
-                <div class="pricing-item">
-                    <div class="pricing-icon">
-                        <i class="fas fa-hard-hat"></i>
+                <script>
+                    new Swiper('.portfolio-gallery', { // Исправлено название класса
+                      freeMode: true,
+                      mousewheel: {
+                        enabled: true,
+                        forceToAxis: true
+                      },
+                      grabCursor: true,
+                      resistanceRatio: 0.5,
+                      slidesPerView: 'auto', // Автоподбор количества видимых слайдов
+                      spaceBetween: 20,      // Отступ между слайдами
+                      breakpoints: {         // Адаптивность
+                        768: {
+                          spaceBetween: 30
+                        }
+                      }
+                    });
+                </script>
+                
+                <div class="portfolio-pricing">
+                    <div class="pricing-item">
+                        <div class="pricing-icon">
+                            <img src="./images/paper.svg" alt="">
+                        </div>
+                        <div class="pricing-details">
+                            <h3>Материалы</h3>
+                            <h4>4000 руб.</h4>
+                        </div>
                     </div>
-                    <div class="pricing-details">
-                        <h3>Работа</h3>
-                        <p>5000 руб.</p>
+                    <div class="pricing-item">
+                        <div class="pricing-icon">
+                            <img src="./images/drell.svg" alt="">
+                        </div>
+                        <div class="pricing-details">
+                            <h3>Работа</h3>
+                            <h4>5000 руб.</h4>
+                        </div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-icon">
+                            <img src="./images/list.svg" alt="">
+                        </div>
+                        <div class="pricing-details">
+                            <h3>Итого</h3>
+                            <h4>9000 руб.</h4>
+                        </div>
+                        <button class="btn primary-btn"><h4>Оставить заявку</h4></button>
                     </div>
                 </div>
-                <div class="pricing-item">
-                    <div class="pricing-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
-                    <div class="pricing-details">
-                        <h3>Итого</h3>
-                        <p>9000 руб.</p>
-                    </div>
-                </div>
-                <button class="btn primary-btn">Оставить заявку</button>
             </div>
         </div>
     </section>
@@ -300,10 +305,10 @@
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="reviews-header">
-                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <h1>Отзывы наших клиентов</h1>
                 <div class="reviews-nav">
-                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
                 </div>
             </div>
             
