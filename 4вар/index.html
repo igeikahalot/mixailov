@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=FUTURA+PT:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -189,7 +190,7 @@
                         <h3 class="portfolio-subtitle">Выполненные работы</h3>
                         <h1 class="portfolio-title">Название работы</h1>
                     </div>
-                    <div class="portfolio-nav">
+                    <div class="arrow-nav">
                         <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
                         <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
                     </div>
@@ -305,8 +306,8 @@
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="reviews-header">
-                <h1>Отзывы наших клиентов</h1>
-                <div class="reviews-nav">
+                <div class="review-title"><h1>Отзывы наших клиентов</h1></div>
+                <div class="arrow-nav">
                     <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
                     <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
                 </div>
@@ -320,11 +321,11 @@
                         </div>
                         <div class="reviewer-info">
                             <h3>Денис Смирнов</h3>
-                            <p class="review-date">10.10.2023</p>
+                            <h5 class="review-date">10.10.2019</h5>
                         </div>
                     </div>
                     <div class="review-content">
-                        <p>Имеется спорная точка зрения, гласящая примерно следующее: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом — заблокированы в рамках своих.</p>
+                        <h4>Имеется спорная точка зрения, гласящая примерно следующее: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом — заблокированы в рамках своих.</h4>
                     </div>
                 </div>
                 
@@ -335,11 +336,11 @@
                         </div>
                         <div class="reviewer-info">
                             <h3>Денис Смирнов</h3>
-                            <p class="review-date">10.10.2023</p>
+                            <h5 class="review-date">10.10.2019</h5>
                         </div>
                     </div>
                     <div class="review-content">
-                        <p>Имеется спорная точка зрения, гласящая примерно следующее: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом — заблокированы в рамках своих.</p>
+                        <h4>Имеется спорная точка зрения, гласящая примерно следующее: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом — заблокированы в рамках своих.</h4>
                     </div>
                 </div>
             </div>
@@ -349,12 +350,14 @@
     <!-- Call Request Section -->
     <section class="call-request">
         <div class="container">
-            <h2 class="section-title">Оставьте заявку на звонок</h2>
-            <form class="call-form">
-                <input type="text" placeholder="Имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <button type="submit" class="btn primary-btn">Отправить</button>
-            </form>
+            <div class="call-card">
+                <h1>Оставьте заявку на звонок</h1>
+                <form class="call-form">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <button type="submit" class="btn primary-btn"><h4>Отправить</h4></button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -362,10 +365,10 @@
     <section id="documents" class="documents">
         <div class="container">
             <div class="documents-header">
-                <h2 class="section-title">Документы и сертификаты</h2>
-                <div class="documents-nav">
-                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                <h1 class="documents-title">Документы и сертификаты</h1>
+                <div class="arrow-nav">
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
                 </div>
             </div>
             
@@ -374,25 +377,25 @@
                     <div class="document-image">
                         <img src="images/sertif.png" alt="Сертификат соответствия">
                     </div>
-                    <p>Только сплочённость команды профессионалов сделала своё дело</p>
+                    <h4>Только сплочённость команды профессионалов сделала своё дело</h4>
                 </div>
                 <div class="document-card">
                     <div class="document-image">
                         <img src="images/sertif.png" alt="Сертификат соответствия">
                     </div>
-                    <p>Только сплочённость команды профессионалов сделала своё дело</p>
+                    <h4>Только сплочённость команды профессионалов сделала своё дело</h4>
                 </div>
                 <div class="document-card">
                     <div class="document-image">
                         <img src="images/sertif.png" alt="Сертификат соответствия">
                     </div>
-                    <p>Только сплочённость команды профессионалов сделала своё дело</p>
+                    <h4>Только сплочённость команды профессионалов сделала своё дело</h4>
                 </div>
                 <div class="document-card">
                     <div class="document-image">
                         <img src="images/sertif.png" alt="Сертификат соответствия">
                     </div>
-                    <p>Только сплочённость команды профессионалов сделала своё дело</p>
+                    <h4>Только сплочённость команды профессионалов сделала своё дело</h4>
                 </div>
             </div>
         </div>
@@ -400,62 +403,80 @@
 
     <!-- Contacts Section -->
     <section id="contacts" class="contacts">
-        <div class="container">
-            <h2 class="section-title">Контакты</h2>
-            <div class="contacts-container">
-                <div class="contacts-info">
-                    <div class="contact-item">
-                        <i class="far fa-clock"></i>
-                        <div>
-                            <h3>Приём заказов:</h3>
-                            <p>Ежедневно с 08:00 до 22:00</p>
-                        </div>
+        <div class="contacts-map">
+            <div style="position:relative;overflow:hidden;width:100%;">
+              <iframe 
+                src="https://yandex.ru/map-widget/v1/?ll=37.678448%2C55.643739&mode=whatshere&z=17&whatshere%5Bpoint%5D=37.673942%2C55.643739" 
+                width="1920" 
+                height="700" 
+                frameborder="0" 
+                allowfullscreen="true"
+                style="border-radius:10px;"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="contacts-container">
+            <h1 class="contacts-title">Контакты</h1>
+            <div class="contacts-info">
+                <div class="contact-item">
+                    <img src="./images/clock.svg" alt="">
+                    <div>
+                        <h4>Приём заказов:
+                        <br>Ежедневно с 08:00 до 22:00</h4>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-credit-card"></i>
-                        <div>
-                            <h3>Оплата по договору наличными/безналичными, с НДС или без НДС</h3>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Московская область, г. Пушкин, ул. Красноармейская, д. 16А</h3>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="far fa-envelope"></i>
-                        <div>
-                            <h3>name@email.com</h3>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>+7 (936) 200-31-31</h3>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>+7 (926) 600-11-16</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="social-networks">
-                        <h3>Пишите нам в социальных сетях:</h3>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
-                        </div>
-                    </div>
-                    
-                    <button class="btn primary-btn">Заказать звонок</button>
                 </div>
-                <div class="contacts-map">
-                    <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/kashirskoye_shosse_64k1/Z04YcABjQEEFQFtvfXp1cntgbQ==/?ll=37.671990%2C55.644726&utm_medium=mapframe&utm_source=maps&z=16.33" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?ll=37.671990%2C55.644726&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY1MTMyNRJA0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINCa0LDRiNC40YDRgdC60L7QtSDRiNC-0YHRgdC1LCA2NNC6MSIKDR-yFkIVMZNeQg%2C%2C&z=16.33" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                <div class="contact-item">
+                    <img src="./images/credit-card.svg" alt="">
+                    <div>
+                        <h4>Оплата по договору наличными/безналичными, с НДС и без НДС</h4>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <img src="./images/location-marker.svg" alt="">
+                    <div>
+                        <h4>Московская область, г. Пушкин,<br>ул. Красноармейская, д. 16А</h4>
+                    </div>
+                </div>
+
+                <div class="contact-flex">
+                    <div class="item-flex">
+                        <img src="./images/mail.svg" alt="">
+                        <div>
+                            <h4>name@email.com</h4>
+                        </div>
+                    </div>
+                    <div class="item-flex">
+                        <img src="./images/phone-contact.svg" alt="">
+                        <div>
+                            <h4>+7 (936) 200-31-31</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-flex">
+                    <div class="item-flex">
+                        <img src="./images/phone-contact.svg" alt="">
+                        <div>
+                            <h4>+7 (936) 100-31-31</h4>
+                        </div>
+                    </div>
+                    <div class="item-flex">
+                        <img src="./images/phone-contact.svg" alt="">
+                        <div>
+                            <h4>+7 (926) 600-11-16</h4>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="social-networks">
+                <h3>Пишите нам в социальных сетях:</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><img src="./images/whatsapp.svg" alt=""></a>
+                    <a href="#" class="social-icon telegram"><img src="./images/telegram.svg" alt=""></a>
                 </div>
             </div>
+
+            <button class="btn primary-btn"><h4>Заказать звонок</h4></button>
         </div>
     </section>
 
@@ -464,10 +485,11 @@
         <div class="container">
             <div class="copyright">
                 <div class="privacy-policy">
-                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#"><h3>Политика конфиденциальности</h3></a>
                 </div>
                 <div class="developer">
-                    <p>Сайт разработан <strong>GRAMPUS</strong></p>
+                    <h3>Сайт разработан</h3>
+                    <img src="./images/GRAMPUS.svg" alt="">
                 </div>
             </div>
         </div>
