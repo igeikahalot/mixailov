@@ -1,3 +1,33 @@
+@font-face {
+    font-family: 'Aquawax Pro';
+    src: url('fonts/Aquawax-Pro-Regular-TRIAL.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Aquawax Pro';
+    src: url('fonts/Aquawax-Pro-Medium-TRIAL.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Aquawax Pro';
+    src: url('fonts/Aquawax-Pro-Demibold-TRIAL.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Aquawax Pro';
+    src: url('fonts/Aquawax-Pro-Bold-TRIAL.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+
 /* Base Styles */
 * {
     margin: 0;
@@ -40,6 +70,11 @@ h1 {
     font-size: 40px;
     line-height: 46px;
     letter-spacing: 0%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 h2 {
@@ -105,7 +140,7 @@ h6 {
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
-    padding: 5vh 15px;
+    padding: 10vh 15px 5vh 15px;
 }
 
 .btn {
@@ -200,40 +235,43 @@ nav {
 .dropdown {
     display: block;
     position: absolute;
-    top: calc(100% + 20px);
+    top: calc(100% + 30px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
     background: var(--background-secondary);
     border-radius: 10px;
     padding: 20px;
     opacity: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
     visibility: hidden;
+    pointer-events: none;
     min-width: 200px;
     min-height: 240px;
+    transition: all 0.3s ease;
+    z-index: 100;
 }
 
-.dropdown li {
-    list-style: none;
-    margin-bottom: 20px;
-    text-align: center;
+.nav-item {
+    position: relative;
 }
 
-.dropdown li:last-child {
-    margin-bottom: 0;
+.nav-item::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -15px;
+    right: -15px;
+    height: 30px;
+    background: transparent;
+    z-index: 99;
 }
 
-.dropdown a {
-    text-decoration: none;
-    color: var(--text);
-}
-
-.nav-item:hover .dropdown {
+.nav-item:hover .dropdown,
+.nav-item:hover::after,
+.dropdown:hover {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .dropdown::before {
@@ -249,11 +287,32 @@ nav {
     border-bottom: 10px solid var(--background-secondary);
 }
 
+.dropdown li {
+    list-style: none;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dropdown li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+}
+
+.dropdown a:hover {
+    color: var(--akcent);
+}
+
 .nav-item:first-child .dropdown::before,
 .nav-item:last-child .dropdown::before {
     left: 50%;
     transform: translateX(-50%);
-    right: auto;
 }
 
 .hero {
@@ -342,4 +401,39 @@ nav {
 /* Анимация при наведении */
 .hero-prev-btn:hover::after, .hero-next-btn:hover::after {
     opacity: 1;
+}
+
+.biofilter-intro {
+    background-color: var(--background-first);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    grid-template-rows: repeat(2, auto); /* 2 строки */
+    align-items: center;
+    gap: 30px;
+}
+
+.intro-grid h4 {
+    color: var(--text);
+}
+
+.huge-img {
+    background-size: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: calc(30vw * 0.99);
+    min-height: 350px;
+    border-radius: 0 30px 0 30px;
+}
+
+.card1 {
+    background-image: url('./images/card1.jpg');
+    border-radius: 0 30px 0 30px;
+}
+
+.card2 {
+    background-image: url('./images/card2.jpg');
+    border-radius: 0 30px 0 30px;
 }
