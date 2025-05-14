@@ -134,7 +134,7 @@ h6 {
     letter-spacing: 0%;
 }
 
-.conteiner {
+.container {
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
@@ -308,6 +308,55 @@ nav {
     transform: translateX(-50%);
 }
 
+/* Hamburger menu button - hidden by default on larger screens */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--akcent);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Navigation container for mobile */
+.nav-container {
+    width: 100%;
+}
+
+/* Mobile contacts - hidden by default */
+.mobile-contacts {
+    display: none;
+}
+
+/* Overlay when mobile menu is open */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+
+
+
 .hero {
     background-image: url("./images/hero.jpg");
     background-repeat: no-repeat;
@@ -331,7 +380,7 @@ nav {
     rgba(0, 0, 0, 0.6) 66.43%, rgba(0, 0, 0, 0.65) 80.52%);
 }
 
-.hero--conteiner {
+.hero--container {
     padding-top: 19vh;
     transform: scaleX(-1);
 }
@@ -451,56 +500,113 @@ nav {
     background-image: url("./images/card2.jpg");
 }
 
-/* Hamburger menu button - hidden by default on larger screens */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
+
+.advantages {
+    background-color: var(--background-first);
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.advantages-card h3 {
+    margin: 10px 0;
+}
+
+.advantages-card h4 {
+    color: var(--text);
+}
+
+
+.working {
+    background-color: var(--background-secondary);
+}
+
+.working-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.working-grid:last-child {margin-bottom: 0;}
+
+.row1 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.row2 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.row3 {
+    grid-template-columns: 1fr;}
+
+
+.working-card {
+    border-radius: 0 30px 0 30px;
+    background-color: var(--background-first);
+    padding: 30px;
+}
+
+.working-card h2 {
+    color: var(--akcent);
+}
+
+.working-card h4 {
+    color: var(--text);
+}
+
+
+.equipment {
+    background-color: var(--background-secondary);
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.equipment-card {
+    background-color: var(--background-first);
+    padding: 30px;
+    border-radius: 0 30px 0 30px;
+}
+
+.equipment-item {
+    display: flex;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1001;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: var(--akcent);
-    border-radius: 3px;
-    transition: all 0.3s ease;
+.equipment-item:last-child {
+    margin-bottom: 0px;
 }
 
-/* Navigation container for mobile */
-.nav-container {
-    width: 100%;
+.equipment-item h4 {
+    color: var(--text);
+    white-space: nowrap;
 }
 
-/* Mobile contacts - hidden by default */
-.mobile-contacts {
-    display: none;
+.dash-line {
+    height: 1px;
+    flex: 1;
+    border: 1px dashed #D4D4D4;
 }
 
-/* Overlay when mobile menu is open */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 999;
-}
-
-.menu-overlay.active {
-    display: block;
-}
 
 /* Media Queries - Combined by breakpoint */
 
 /* Large Devices (desktops, less than 1200px) */
 @media (max-width: 1200px) {
+    .header-container, .nav {
+        max-width: 960px;
+    }
+
     .intro-grid {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -514,9 +620,13 @@ nav {
         width: 100%;
         max-width: 570px;
     }
+
+    .intro-grid h4 {
+        text-align: center;
+    }
     
-    .header-container, .nav {
-        max-width: 960px;
+    .advantages-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -655,6 +765,12 @@ nav {
 
     .mobile-contacts h3 {
         color: var(--background-first);
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .mobile-contacts img{
+        filter: brightness(0) saturate(100%) invert(89%) sepia(5%) saturate(50%) hue-rotate(170deg) brightness(105%) contrast(95%);
     }
     
     /* Adjust hero section for mobile */
@@ -677,6 +793,17 @@ nav {
     
     .hero-btn {
         max-width: 30%;
+    }
+
+
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container-equipment,
+    .container-advantages,
+    .container-bf-intro {
+        padding: 5vh 5vw;
     }
 }
 
@@ -711,6 +838,16 @@ nav {
     .hero-arrow-nav {
         margin-top: 15vh;
     }
+
+    .row1 {grid-template-columns: 1fr 1fr;}
+
+    .row2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .working-grid.row2 .working-card:last-child {
+        grid-column: span 2;
+    }
 }
 
 /* Extra Small Devices (phones, less than 576px) */
@@ -724,7 +861,7 @@ nav {
         border-radius: 0 20px 0 20px; /* Slightly smaller border radius */
     }
     
-    .intro-grid h4 {
+    h4 {
         font-size: 16px; /* Smaller font size on mobile */
         line-height: 1.5;
     }
@@ -761,7 +898,29 @@ nav {
         margin-bottom: 30px;
     }
     
-    .conteiner {
+    .container {
         padding: 5vh 15px;
+    }
+
+    .working-grid {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .row2 {
+        grid-template-columns: 1fr;
+    }
+
+    .working-grid.row2 .working-card:last-child {
+        grid-column: span 1;
+    }
+
+    .equipment-card {
+        padding: 15px;
+    }
+
+    .equipment-item h4 {
+        font-size: 12px;
+        line-height: 1.5;
     }
 }
