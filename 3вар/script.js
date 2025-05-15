@@ -59,3 +59,77 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all tab buttons and content
+  const tabButtons = document.querySelectorAll(".tab-button")
+  const tabContents = document.querySelectorAll(".tab-content")
+
+  // Add click event to each tab button
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Get the tab id from data attribute
+      const tabId = this.getAttribute("data-tab")
+
+      // Remove active class from all buttons and contents
+      tabButtons.forEach((btn) => btn.classList.remove("active"))
+      tabContents.forEach((content) => content.classList.remove("active"))
+
+      // Add active class to current button and content
+      this.classList.add("active")
+      document.getElementById(tabId).classList.add("active")
+    })
+  })
+})
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.control-card');
+    let activeCardIndex = 0;
+
+    // Функция обновления UI
+    function updateUI() {
+        cards.forEach((card, index) => {
+            // Обновляем активность карточек
+            if (index === activeCardIndex) {
+                card.classList.add('active');
+                card.classList.remove('inactive');
+            } else {
+                card.classList.add('inactive');
+                card.classList.remove('active');
+            }
+
+            // Обновляем стрелки внутри текущей карточки
+            const leftArrow = card.querySelector('.leftArrow');
+            const rightArrow = card.querySelector('.rightArrow');
+            
+            leftArrow.classList.toggle('disabled', activeCardIndex === 0);
+            rightArrow.classList.toggle('disabled', activeCardIndex === cards.length - 1);
+        });
+    }
+
+    // Делегирование событий: обрабатываем клики по стрелкам во всех карточках
+    document.querySelector('.biofilter-content').addEventListener('click', function(e) {
+        const target = e.target;
+
+        // Клик по левой стрелке
+        if (target.classList.contains('leftArrow')) {
+            if (activeCardIndex > 0) {
+                activeCardIndex--;
+                updateUI();
+            }
+        }
+
+        // Клик по правой стрелке
+        if (target.classList.contains('rightArrow')) {
+            if (activeCardIndex < cards.length - 1) {
+                activeCardIndex++;
+                updateUI();
+            }
+        }
+    });
+
+    // Инициализация
+    updateUI();
+});

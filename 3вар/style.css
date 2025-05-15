@@ -34,6 +34,10 @@
     font-family: 'Aquawax Pro', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--h1);
+}
+
 body {
     font-synthesis: none; /* Отключаем авто-подбор жирности */
     text-rendering: optimizeLegibility;
@@ -51,6 +55,7 @@ body {
     --h1: #0C191F;
     --shadow-first: 0px 30px 30px 0px rgba(35, 75, 91, 0.1);
     --shadow-secondary: 0px 10px 30px 0px rgba(0, 55, 0, 0.1);
+    --shadow-third: 0px 30px 60px 0px rgba(35, 75, 91, 0.1);
 }
 
 .title-txt {
@@ -66,26 +71,27 @@ body {
 h1 {
     font-weight: 700;
     font-size: 40px;
-    line-height: 46px;
+    line-height: 1.35;
     letter-spacing: 0%;
 }
 
 .title {
     text-align: center;
     margin-bottom: 40px;
+    color: var(--h1);
 }
 
 h2 {
     font-weight: 600;
     font-size: 32px;
-    line-height: 37px;
+    line-height: 1.35;
     letter-spacing: 0%;
 }
 
 h3 {
     font-weight: 500;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 1.35;
     letter-spacing: 0%;
 }
 
@@ -93,21 +99,29 @@ h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 20px;
-    line-height: 27px;
+    line-height: 1.35;
     letter-spacing: 0%;
 }
 
 h4 {
     font-weight: 400;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.35;
     letter-spacing: 0%;
+}
+
+.old-price p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-decoration: line-through;
+    text-decoration-color: #1B282E;
 }
 
 .nav-item h4 {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 1.35;
 }
 
 .btn-txt {
@@ -123,14 +137,14 @@ h4 {
 h5 {
     font-weight: 400;
     font-size: 14px;
-    line-height: 19px;
+    line-height: 1.35;
     letter-spacing: 0%;
 }
 
 h6 {
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 1.35;
     letter-spacing: 0%;
 }
 
@@ -146,6 +160,7 @@ h6 {
     border-radius: 0 30px 0 30px;
     padding: 20px 30px 20px 30px;
     height: 62px;
+    width: 100%;
     transition: all 0.4s ease;
 }
 
@@ -158,12 +173,57 @@ h6 {
     height: 34px;
     background-color: transparent;
     border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Исходное изображение (остается видимым) */
+.btn-nav img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+/* Новая картинка (hover-состояние) */
+.btn-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+/* Установка изображений */
+.prev-btn::after {
+    background-image: url('./images/arrow-narrow-left-hover.svg');
+}
+
+.next-btn::after {
+    background-image: url('./images/arrow-narrow-right-hover.svg');
+}
+
+/* Анимация при наведении */
+.prev-btn:hover::after, .next-btn:hover::after {
+    opacity: 1;
 }
 
 .arrow-nav {
     max-width: 88px;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 header {
@@ -226,6 +286,9 @@ nav {
 
 .nav-link {
     text-decoration: none;
+}
+
+.nav-link h4 {
     color: var(--background-first);
 }
 
@@ -292,10 +355,13 @@ nav {
 
 .dropdown a {
     text-decoration: none;
-    color: var(--text);
     display: block;
     padding: 5px 0;
     transition: color 0.2s ease;
+}
+
+.dropdown li a h4 {
+    color: var(--text);
 }
 
 .dropdown a:hover {
@@ -396,53 +462,6 @@ nav {
 
 .hero-arrow-nav {
     margin-top: 22vh;
-}
-
-.hero-prev-btn, .hero-next-btn {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-/* Исходное изображение (остается видимым) */
-.hero-prev-btn img, .hero-next-btn img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: 1;
-}
-
-/* Новая картинка (hover-состояние) */
-.hero-prev-btn::after, .hero-next-btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 2;
-}
-
-/* Установка изображений */
-.hero-prev-btn::after {
-    background-image: url('./images/arrow-narrow-left-hover.svg');
-}
-
-.hero-next-btn::after {
-    background-image: url('./images/arrow-narrow-right-hover.svg');
-}
-
-/* Анимация при наведении */
-.hero-prev-btn:hover::after, .hero-next-btn:hover::after {
-    opacity: 1;
 }
 
 .biofilter-intro {
@@ -599,6 +618,370 @@ nav {
 }
 
 
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 10px 30px;
+    border-radius: 0 30px 0 30px;
+    font-family: 'Aquawax Pro', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.35;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #D4D4D4;
+    color: var(--text);
+    background-color: transparent;
+    outline: none;
+}
+
+.tab-button:hover:not(.active) {
+    border: 2px solid var(--akcent);
+    color: var(--akcent);
+}
+
+.tab-button.active {
+    background-color: var(--akcent);
+    color: var(--background-first);
+    border: 0;
+}
+
+/* Content Styles */
+.instructions {
+    background-color: var(--background-first);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.instructions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.instructions-text h3 {
+    margin-bottom: 20px;
+}
+
+.instruction-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.instruction-list h4 {
+    color: var(--text);
+}
+
+.instruction-list li {
+  position: relative;
+  padding-left: 30px;
+}
+
+.instruction-list li::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text); /* Цвет кружка */
+}
+
+
+.info-box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    grid-column: span 2;
+    background-color: var(--background-secondary);
+    border-radius: 10px;
+}
+
+.info-box img {
+    width: 24px;
+    height: auto;
+}
+
+.info-box h3 {
+    color: var(--text);
+}
+
+.instruction-image {
+    width: 100%;
+    height: 350px; /* Fixed height as requested */
+    max-width: 570px; /* Maximum width as requested */
+    border-radius: 0 30px 0 30px;
+    margin: 0 auto; /* Center the container */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img1 {background-image: url("./images/card1.jpg");}
+.img2 {background-image: url("./images/card2.jpg");}
+.img3 {background-image: url("./images/card3.png");}
+
+
+.service {
+    background-color: var(--background-first);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.service-text h3 {
+    margin-bottom: 20px;
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-list h4 {
+    color: var(--text);
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 30px;
+}
+
+.service-list li::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text); /* Цвет кружка */
+}
+
+.service-image {
+    background-image: url("./images/card4.png");
+    width: 100%;
+    height: 350px; /* Fixed height as requested */
+    max-width: 570px; /* Maximum width as requested */
+    border-radius: 0 30px 0 30px;
+    margin: 0 auto; /* Center the container */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.guarantee {
+    background-color: var(--background-secondary);
+}
+
+.container-guarantee {
+    padding: 10vh 15px 10vh 15px;
+}
+
+.guarantee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.guarantee-title {
+    margin-bottom: 20px;
+}
+
+.guarantee-text h4 {
+    color: var(--text);
+}
+
+.guarantee-image {
+    background-image: url("./images/сertificate.jpg");
+    width: 100%;
+    height: 403px;
+    max-width: 570px; /* Maximum width as requested */
+    margin: 0 auto; /* Center the container */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: var(--shadow-third);
+}
+
+
+.biofilter {
+    background-color: var(--background-first);
+}
+
+.control-card.inactive {
+    display: none;
+}
+
+.control-card.active {
+    display: block;
+}
+
+.arrow {
+    width: 34px;
+    height: 34px;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.arrow.disabled {
+    cursor: not-allowed;
+}
+
+.leftArrow {
+    background-image: url("./images/arrow-narrow-left-grey.svg");
+}
+
+.rightArrow {
+    background-image: url("./images/arrow-narrow-right-grey.svg");
+}
+
+.leftArrow:not(.disabled) {
+    background-image: url("./images/arrow-narrow-left-black.svg");
+    z-index: 2;
+}
+
+.rightArrow:not(.disabled) {
+    background-image: url("./images/arrow-narrow-right-black.svg");
+    z-index: 2;
+}
+
+/* Исходное изображение (остается видимым) */
+.arrow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+/* Новая картинка (hover-состояние) */
+.arrow:not(.disabled)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+/* Установка изображений */
+.leftArrow:not(.disabled)::after {
+    background-image: url('./images/arrow-narrow-left-hover.svg');
+}
+
+.rightArrow:not(.disabled)::after {
+    background-image: url('./images/arrow-narrow-right-hover.svg');
+}
+
+/* Анимация при наведении */
+.leftArrow:hover:not(.disabled)::after,
+.rightArrow:hover:not(.disabled)::after {
+    opacity: 1;
+}
+
+.arrow-btn {
+    max-width: 88px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.biofilter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.bf-img {
+    width: 100%;
+    height: 543px;
+    max-width: 570px; /* Maximum width as requested */
+    margin: 0 auto; /* Center the container */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.card5 {
+    background-image: url("./images/card5.jpg");
+}
+
+.card6 {
+    background-image: url("./images/card1.jpg");
+}
+
+.card7 {
+    background-image: url("./images/card2.jpg");
+}
+
+.bf-title {
+    margin-bottom: 20px;
+}
+
+.title-row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bf-txt {
+    margin-bottom: 40px;
+}
+
+.bf-txt h4 {
+    color: var(--text);
+}
+
+.bf-footer {
+    display: flex;
+    gap: 30px;
+}
+
+.old-price-bf {
+    margin-bottom: 10px;
+}
+
+.new-price {
+    white-space: nowrap;
+}
+
+.bf-btn {
+    max-width: 342px;
+}
+
 /* Media Queries - Combined by breakpoint */
 
 /* Large Devices (desktops, less than 1200px) */
@@ -627,6 +1010,14 @@ nav {
     
     .advantages-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .container-biofilter {
+        padding: 10vh 10vw 5vh 10vw;
+    }
+
+    .biofilter-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -676,6 +1067,7 @@ nav {
     /* Hamburger menu animation when active */
     .menu-toggle.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
+        background-color: var(--background-first);
     }
     
     .menu-toggle.active span:nth-child(2) {
@@ -684,6 +1076,7 @@ nav {
     
     .menu-toggle.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--background-first);
     }
     
     /* Navigation styling for mobile */
@@ -724,7 +1117,7 @@ nav {
         box-shadow: none;
     }
     
-    .dropdown a {
+    .dropdown li a h4{
         color: var(--background-first);
     }
 
@@ -766,7 +1159,7 @@ nav {
     .mobile-contacts h3 {
         color: var(--background-first);
         font-size: 16px;
-        line-height: 19px;
+        line-height: 1.35;
     }
 
     .mobile-contacts img{
@@ -776,14 +1169,14 @@ nav {
     /* Adjust hero section for mobile */
     .title-txt {
         font-size: 60px;
-        line-height: 66px;
+        line-height: 1.35;
     }
 
     .header-phone h3 {
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         font-size: 20px;
-        line-height: 27px;
+        line-height: 1.35;
         letter-spacing: 0%;
     }
     
@@ -813,18 +1206,24 @@ nav {
         gap: 20px;
     }
     
-    .huge-img {
+    .huge-img,
+    .guarantee-image {
         height: 300px; /* Slightly smaller height on tablets */
     }
     
     .title-txt {
         font-size: 50px;
-        line-height: 56px;
+        line-height: 1.35;
     }
     
     h1 {
         font-size: 32px;
-        line-height: 38px;
+        line-height: 1.35;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 1.35;
     }
     
     .hero {
@@ -848,6 +1247,12 @@ nav {
     .working-grid.row2 .working-card:last-child {
         grid-column: span 2;
     }
+
+    .instructions-grid,
+    .service-grid,
+    .guarantee-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Extra Small Devices (phones, less than 576px) */
@@ -863,7 +1268,7 @@ nav {
     
     h4 {
         font-size: 16px; /* Smaller font size on mobile */
-        line-height: 1.5;
+        line-height: 1.35;
     }
     
     .logo {
@@ -876,12 +1281,12 @@ nav {
     
     .title-txt {
         font-size: 40px;
-        line-height: 46px;
+        line-height: 1.35;
     }
     
     h1 {
         font-size: 28px;
-        line-height: 34px;
+        line-height: 1.35;
     }
     
     .hero {
@@ -894,7 +1299,7 @@ nav {
     
     .hero-text h3 {
         font-size: 16px;
-        line-height: 20px;
+        line-height: 1.35;
         margin-bottom: 30px;
     }
     
@@ -921,6 +1326,14 @@ nav {
 
     .equipment-item h4 {
         font-size: 12px;
-        line-height: 1.5;
+        line-height: 1.35;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .bf-footer {
+        gap: 10px;
     }
 }
