@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Делегирование событий: обрабатываем клики по стрелкам во всех карточках
-    document.querySelector('.biofilter-content').addEventListener('click', function(e) {
+    document.querySelector('.biofilter-wrapper').addEventListener('click', function(e) {
         const target = e.target;
 
         // Клик по левой стрелке
@@ -132,4 +132,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Инициализация
     updateUI();
+});
+
+
+const carousel = document.querySelector('.carousel');
+const leftArrow = document.getElementById('leftArrow');
+const rightArrow = document.getElementById('rightArrow');
+
+function updateArrows() {
+  const scrollLeft = carousel.scrollLeft;
+  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+  
+  // Обновляем левую стрелку
+  if (scrollLeft <= 0) {
+    leftArrow.classList.add('disabled');
+  } else {
+    leftArrow.classList.remove('disabled');
+  }
+  
+  // Обновляем правую стрелку
+  if (scrollLeft >= maxScroll - 1) {
+    rightArrow.classList.add('disabled');
+  } else {
+    rightArrow.classList.remove('disabled');
+  }
+}
+
+// Инициализация
+updateArrows();
+
+// Обработчики событий
+carousel.addEventListener('scroll', updateArrows);
+
+leftArrow.addEventListener('click', () => {
+  if (!leftArrow.classList.contains('disabled')) {
+    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+});
+
+rightArrow.addEventListener('click', () => {
+  if (!rightArrow.classList.contains('disabled')) {
+    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  }
 });
