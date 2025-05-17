@@ -60,6 +60,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const hero = document.querySelector('.hero');
+const nextButton = document.querySelector('.next-btn'); // Предполагаем, что есть классы .next и .prev
+const prevButton = document.querySelector('.prev-btn');
+const images = [
+  './images/hero.jpg',
+  './images/card9.png',
+  './images/card4.png'
+];
+let currentIndex = 0;
+
+// Создаём два фоновых слоя для перехода
+const bg1 = document.createElement('div');
+const bg2 = document.createElement('div');
+bg1.className = 'hero__bg';
+bg2.className = 'hero__bg';
+bg2.style.opacity = '0';
+hero.prepend(bg1, bg2);
+
+// Инициализация первого фона
+bg1.style.backgroundImage = `url(${images[0]})`;
+
+function changeImage(direction) {
+  // Определяем новое значение currentIndex в зависимости от направления
+  if (direction === 'next') {
+    currentIndex = (currentIndex + 1) % images.length;
+  } else {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+  }
+  
+  // Определяем активный и неактивный слои
+  const activeBg = bg1.style.opacity === '1' ? bg1 : bg2;
+  const nextBg = activeBg === bg1 ? bg2 : bg1;
+
+  // Устанавливаем новое изображение и плавно переключаем
+  nextBg.style.backgroundImage = `url(${images[currentIndex]})`;
+  nextBg.style.opacity = '1';
+  activeBg.style.opacity = '0';
+}
+
+nextButton.addEventListener('click', () => changeImage('next'));
+prevButton.addEventListener('click', () => changeImage('prev'));
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get all tab buttons and content
@@ -135,6 +177,57 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.control-card2');
+    let activeCardIndex = 0;
+
+    // Функция обновления UI
+    function updateUI() {
+        cards.forEach((card, index) => {
+            // Обновляем активность карточек
+            if (index === activeCardIndex) {
+                card.classList.add('active');
+                card.classList.remove('inactive');
+            } else {
+                card.classList.add('inactive');
+                card.classList.remove('active');
+            }
+
+            // Обновляем стрелки внутри текущей карточки
+            const leftArrow = card.querySelector('.arrowLeft');
+            const rightArrow = card.querySelector('.arrowRight');
+            
+            leftArrow.classList.toggle('disabled', activeCardIndex === 0);
+            rightArrow.classList.toggle('disabled', activeCardIndex === cards.length - 1);
+        });
+    }
+
+    // Делегирование событий: обрабатываем клики по стрелкам во всех карточках
+    document.querySelector('.examples-wrapper').addEventListener('click', function(e) {
+        const target = e.target;
+
+        // Клик по левой стрелке
+        if (target.classList.contains('arrowLeft')) {
+            if (activeCardIndex > 0) {
+                activeCardIndex--;
+                updateUI();
+            }
+        }
+
+        // Клик по правой стрелке
+        if (target.classList.contains('arrowRight')) {
+            if (activeCardIndex < cards.length - 1) {
+                activeCardIndex++;
+                updateUI();
+            }
+        }
+    });
+
+    // Инициализация
+    updateUI();
+});
+
+
 const carousel = document.querySelector('.carousel');
 const leftArrow = document.getElementById('leftArrow');
 const rightArrow = document.getElementById('rightArrow');
@@ -166,12 +259,12 @@ carousel.addEventListener('scroll', updateArrows);
 
 leftArrow.addEventListener('click', () => {
   if (!leftArrow.classList.contains('disabled')) {
-    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    carousel.scrollBy({ left: -370, behavior: 'smooth' });
   }
 });
 
 rightArrow.addEventListener('click', () => {
   if (!rightArrow.classList.contains('disabled')) {
-    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    carousel.scrollBy({ left: 370, behavior: 'smooth' });
   }
 });
