@@ -50,6 +50,7 @@ body {
     --background-first: #F2F6F6;
     --background-secondary: #E9EDED;
     --akcent: #57ADE4;
+    --akcent-second: #5199FF;
     --hover: #3B91C8;
     --text: #556063;
     --h1: #0C191F;
@@ -1470,6 +1471,74 @@ nav {
     transform: scaleX(-1);
 }
 
+.cooperation {
+    background-color: var(--akcent-second);
+}
+
+.container-cooperation {
+    padding: 5vh 15px;
+}
+
+.cooperation-content {
+    background-color: var(--background-first);
+    border-radius: 0 30px 0 30px;
+    box-shadow: var(--shadow-secondary);
+    padding: 30px;
+}
+
+.cooperation-content h3 {
+    margin-bottom: 10px;
+}
+
+.cooperation-content h4 {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.custom-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-group {
+    max-width: 410px;
+    width: 100%;
+}
+
+.form-group input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--text);
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 400;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+    color: var(--text);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom-color: var(--akcent);
+    color: var(--akcent);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+    color: var(--akcent);
+}
+
+.btn-form {
+    border: 0;
+    max-width: 250px;
+}
+
 /* Media Queries - Combined by breakpoint */
 
 /* Large Devices (desktops, less than 1200px) */
@@ -1837,6 +1906,26 @@ nav {
     .answers.active h4 {
         max-height: 600px;
     }
+
+    .stage-card {
+        min-height: auto;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .container-cooperation {
+        padding: 5vh 5vw;
+    }
+
+    .custom-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-form {
+        grid-column: span 2;
+        margin: 0 auto;
+    }
 }
 
 /* Extra Small Devices (phones, less than 576px) */
@@ -1961,10 +2050,9 @@ nav {
         justify-items: flex-start;
     }
 
-    .stage-card {
-        min-height: auto;
-        max-width: 500px;
-        width: 100%;
+    .form-group input {
+        font-size: 16px;
+        line-height: 1.35;
     }
 }
 
@@ -2001,5 +2089,13 @@ nav {
     /* Убираем индивидуальные трансформации */
     .sec1, .sec2, .sec3, .sec4 {
         transform: none !important;
+    }
+
+    .custom-form {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-form {
+        grid-column: span 1;
     }
 }
