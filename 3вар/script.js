@@ -268,3 +268,22 @@ rightArrow.addEventListener('click', () => {
     carousel.scrollBy({ left: 370, behavior: 'smooth' });
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const answerTitles = document.querySelectorAll('.answer-title');
+    
+  answerTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      const answer = title.parentElement;
+      answer.classList.toggle('active');
+        
+       // Закрытие других открытых вопросов (опционально)
+      document.querySelectorAll('.answers').forEach(item => {
+        if (item !== answer && item.classList.contains('active')) {
+          item.classList.remove('active');
+        }
+      });
+    });
+  });
+});

@@ -1044,8 +1044,8 @@ nav {
 
 .carousel {
     display: flex;
-    gap: 30px;
     overflow-x: auto;
+    gap: 30px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     max-width: 1170px; 
@@ -1330,6 +1330,66 @@ nav {
     transform: translate(0, 5px);
 }
 
+
+.FAQ {
+    background-color: var(--background-first);
+}
+
+.container-FAQ {
+    max-width: 1000px;
+}
+
+.answers {
+    background-color: var(--background-secondary);
+    border-radius: 0 30px 0 30px;
+    padding: 20px 20px 20px 30px;
+    margin-bottom: 10px;
+}
+
+.answer-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow-down {
+    transition: transform 0.3s ease;
+}
+
+.answers h3,
+.answers h4 {
+    color: var(--text);
+}
+
+.answers:nth-child(7) {
+    margin-bottom: 40px;
+}
+
+.answers h4 {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 1s ease,
+                padding-top 0.7s ease-out,
+                opacity 0.6s ease-in;
+}
+
+.answers.active h4 {
+    opacity: 1;
+    padding-top: 20px;
+    max-height: 500px;
+}
+
+.answers.active .arrow-down {
+    transform: rotate(180deg);
+}
+
+.FAQ-btn {
+    max-width: 172px;
+    margin: 0 auto;
+}
+
 /* Media Queries - Combined by breakpoint */
 
 /* Large Devices (desktops, less than 1200px) */
@@ -1388,6 +1448,12 @@ nav {
         height: 240px;
         max-width: 300px;
         transform: translate(17%, -17%);
+    }
+
+    .answers h4 {
+    transition: max-height 1.3s ease,
+                padding-top 0.9s ease-out,
+                opacity 0.8s ease-in;
     }
 }
 
@@ -1678,6 +1744,10 @@ nav {
         max-width: 260px;
         transform: translate(0%, -10%);
     }
+
+    .answers.active h4 {
+        max-height: 600px;
+    }
 }
 
 /* Extra Small Devices (phones, less than 576px) */
@@ -1761,8 +1831,9 @@ nav {
     .bf-footer {
         gap: 10px;
     }
-
+    
     .card {
+        scroll-snap-align: center;
         min-width: 345px;
     }
 
@@ -1786,5 +1857,45 @@ nav {
         height: 145px;
         max-width: 190px;
         transform: translate(-20%, -10%);
+    }
+
+    .answers.active h4 {
+        max-height: 900px;
+    }
+}
+
+
+@media (max-width: 530px) {
+    .container-promotion {
+        padding: 5vh 10vw 5vh 10vw ;
+    }
+
+    .section {
+        flex-direction: column; /* Меняем направление flex на колонку */
+        height: auto; /* Убираем фиксированную высоту */
+        padding: 20px; /* Уменьшаем отступы */
+        overflow: hidden; /* Скрываем вылезающие элементы */
+    }
+
+    .section-txt {
+        max-width: 100%; /* Текст занимает всю ширину */
+        margin-bottom: 15px; /* Отступ между текстом и картинкой */
+    }
+
+    .section-img {
+        position: relative !important; /* Отключаем absolute */
+        top: auto !important;
+        left: auto !important;
+        transform: none !important; /* Убираем сдвиги */
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 150px !important; /* Фиксируем высоту */
+        margin: 0 auto !important; /* Центрируем */
+        background-size: contain !important; /* Вместо cover, чтобы не обрезалось */
+    }
+
+    /* Убираем индивидуальные трансформации */
+    .sec1, .sec2, .sec3, .sec4 {
+        transform: none !important;
     }
 }
