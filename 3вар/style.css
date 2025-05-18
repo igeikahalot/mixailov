@@ -1390,6 +1390,86 @@ nav {
     margin: 0 auto;
 }
 
+.stages {
+    background-color: var(--background-first);
+}
+
+.stage-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stage-card {
+    max-width: 270px;
+    min-height: 377px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card-title h1 {
+    color: var(--akcent);
+}
+
+.down-line {
+    flex: 1;
+    border-bottom: 1px solid var(--text);
+    height: 44px;
+}
+
+.stage-card h3{
+    margin-bottom: 10px;
+}
+
+.stage-card h4 {
+    color: var(--text);
+}
+
+.stage-btn {
+    margin-top: 20px;
+}
+
+.stage-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.stage-list h4 {
+    color: var(--text);
+}
+
+.stage-list li {
+  position: relative;
+  padding-left: 30px;
+}
+
+.stage-list li::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text); /* Цвет кружка */
+}
+
+
+.pool-line {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./images/pool-line.jpg');
+    background-position: center;
+    min-height: 400px;
+    width: 100%;
+    transform: scaleX(-1);
+}
+
 /* Media Queries - Combined by breakpoint */
 
 /* Large Devices (desktops, less than 1200px) */
@@ -1652,6 +1732,15 @@ nav {
         max-width: 280px;
         transform: translate(7%, -15%);
     }
+
+    .container-stages {
+        padding: 10vh 10vw 5vh 10vw;
+    }
+
+    .stage-content {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
 }
 
 /* Small Devices (landscape phones, less than 768px) */
@@ -1861,6 +1950,21 @@ nav {
 
     .answers.active h4 {
         max-height: 900px;
+    }
+
+    .container-stages {
+        padding: 10vh 10vw 5vh 10vw;
+    }
+
+    .stage-content {
+        grid-template-columns: 1fr;
+        justify-items: flex-start;
+    }
+
+    .stage-card {
+        min-height: auto;
+        max-width: 500px;
+        width: 100%;
     }
 }
 
