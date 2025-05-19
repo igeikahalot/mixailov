@@ -2379,8 +2379,7 @@ footer {
         height: 82px;
     }
 
-    .btn-txt {
+    #contacts-btn {
         white-space: wrap;
-        text-align: center;
     }
 }
