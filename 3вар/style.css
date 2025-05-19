@@ -2356,6 +2356,10 @@ footer {
 }
 
 @media (max-width: 370px) {
+    .hero-btn {
+        padding: 20px;
+    }
+
     .title-row1,
     .bf-footer {
         display: grid;
@@ -2379,7 +2383,8 @@ footer {
         height: 82px;
     }
 
-    #contacts-btn {
+    .btn-txt {
         white-space: wrap;
+        text-align: center;
     }
 }
