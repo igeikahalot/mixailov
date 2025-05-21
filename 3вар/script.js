@@ -287,3 +287,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработка отправки формы
+    document.getElementById("modal-feedback-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Получаем данные формы
+        const name = document.getElementById("modal-name").value;
+        const phone = document.getElementById("modal-phone").value;
+        const comment = document.getElementById("modal-comment").value;
+
+        // Здесь можно добавить отправку данных на сервер
+        console.log("Form submitted:", { name, phone, comment });
+
+        // Показываем сообщение об успехе
+        alert("Спасибо! Ваша заявка отправлена.");
+
+        // Закрываем модальное окно
+        window.location.href = "#";
+        
+        // Очищаем форму
+        this.reset();
+    });
+
+    // Закрытие модального окна при клике на фон
+    document.querySelector('.modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            window.location.href = "#";
+        }
+    });
+});

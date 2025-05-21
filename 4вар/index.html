@@ -6,9 +6,11 @@
     <title>Откачка септика в Пушкинском районе</title>
     <link rel="icon" href="images/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=FUTURA+PT:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 </head>
 <body>
     <!-- Header -->
@@ -30,15 +32,22 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#advantages"><h4>Преимущества</h4></a></li>
-                <li><a href="#services"><h4>Услуги</h4></a></li>
-                <li><a href="#stages"><h4>Этапы работы</h4></a></li>
-                <li><a href="#portfolio"><h4>Портфолио</h4></a></li>
-                <li><a href="#reviews"><h4>Отзывы</h4></a></li>
-                <li><a href="#documents"><h4>Документы</h4></a></li>
-                <li><a href="#contacts"><h4>Контакты</h4></a></li>
-            </ul>
+            <div class="burger-menu">
+                <div class="burger-icon" id="burgerToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#advantages"><h4>Преимущества</h4></a></li>
+                    <li><a href="#services"><h4>Услуги</h4></a></li>
+                    <li><a href="#stages"><h4>Этапы работы</h4></a></li>
+                    <li><a href="#portfolio"><h4>Портфолио</h4></a></li>
+                    <li><a href="#reviews"><h4>Отзывы</h4></a></li>
+                    <li><a href="#documents"><h4>Документы</h4></a></li>
+                    <li><a href="#contacts"><h4>Контакты</h4></a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -51,7 +60,7 @@
             <div class="hero-text">
                 <h2>Откачка септика<br>в Пушкинском районе</h2>
                 <h3>Для современного мира граница обучения кадров не оставляет шанса для как самодостаточных, так и внешне зависимых концептуальных решений.</h3>
-                <div class="limiter"><button class="btn primary-btn"><h4>Оставить заявку</h4></button></div>
+                <div class="limiter"><a href="#contactModal" data-fancybox="contact"><button class="btn primary-btn"><h4>Оставить заявку</h4></button></a></div>
             </div>
         </div>
     </section>
@@ -146,7 +155,7 @@
                         <div class="stage-number"><h1>01/</h1></div>
                         <h3>Онлайн заявка</h3>
                         <h4>В своём стремлении улучшить пользовательский опыт мы упускаем, что элементы политического.</h4>
-                        <button class="btn primary-btn"><h4>Заказать машину<h4></button>
+                        <a href="#contactModal" data-fancybox="contact"><button class="btn primary-btn"><h4>Заказать машину<h4></button></a>
                     </div>
                     <div class="stage-card">
                         <div class="stage-number"><h1>02/</h1></div>
@@ -175,7 +184,7 @@
                 <h1>Скидка 10%</h1>
                 <h3>Скидка 10% на первый выезд</h3>
                 <h4>Сложно сказать, почему интерактивные прототипы призваны к ответу. Банально, но неопровержимые выводы, а также стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, объективно рассмотрены соответствующими инстанциями. А еще сделанные на базе.</h4>
-                <div class="btn-limiter"><button class="btn primary-btn"><h4>Оставить заявку</h4></button></div>
+                <div class="btn-limiter"><a href="#contactModal" data-fancybox="contact"><button class="btn primary-btn"><h4>Оставить заявку</h4></button></a></div>
             </div>
             <div class="discount-image"></div>
         </div>
@@ -191,8 +200,8 @@
                         <h1 class="portfolio-title">Название работы</h1>
                     </div>
                     <div class="arrow-nav">
-                        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
-                        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
+                        <button class="nav-btn prev-btn"><img src="./images/chevron-left.svg" alt=""></button>
+                        <button class="nav-btn next-btn"><img src="./images/chevron-right.svg" alt=""></button>
                     </div>
                 </div>
                 
@@ -247,24 +256,6 @@
                         <img src="images/card1.png" alt="Выполненная работа 5">
                     </div>
                 </div>
-                <script>
-                    new Swiper('.portfolio-gallery', { // Исправлено название класса
-                      freeMode: true,
-                      mousewheel: {
-                        enabled: true,
-                        forceToAxis: true
-                      },
-                      grabCursor: true,
-                      resistanceRatio: 0.5,
-                      slidesPerView: 'auto', // Автоподбор количества видимых слайдов
-                      spaceBetween: 20,      // Отступ между слайдами
-                      breakpoints: {         // Адаптивность
-                        768: {
-                          spaceBetween: 30
-                        }
-                      }
-                    });
-                </script>
                 
                 <div class="portfolio-pricing">
                     <div class="pricing-item">
@@ -293,14 +284,12 @@
                             <h3>Итого</h3>
                             <h4>9000 руб.</h4>
                         </div>
-                        <button class="btn primary-btn"><h4>Оставить заявку</h4></button>
+                        <a href="#contactModal" data-fancybox="contact"><button class="btn primary-btn"><h4>Оставить заявку</h4></button></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    
 
     <!-- Reviews Section -->
     <section id="reviews" class="reviews">
@@ -308,8 +297,8 @@
             <div class="reviews-header">
                 <div class="review-title"><h1>Отзывы наших клиентов</h1></div>
                 <div class="arrow-nav">
-                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
-                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
+                    <button class="nav-btn prev-btn"><img src="./images/chevron-left.svg" alt=""></button>
+                    <button class="nav-btn next-btn"><img src="./images/chevron-right.svg" alt=""></button>
                 </div>
             </div>
             
@@ -367,8 +356,8 @@
             <div class="documents-header">
                 <h1 class="documents-title">Документы и сертификаты</h1>
                 <div class="arrow-nav">
-                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"><img src="./images/chevron-left.svg" alt=""></i></button>
-                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"><img src="./images/chevron-right.svg" alt=""></i></button>
+                    <button class="nav-btn prev-btn"><img src="./images/chevron-left.svg" alt=""></button>
+                    <button class="nav-btn next-btn"><img src="./images/chevron-right.svg" alt=""></button>
                 </div>
             </div>
             
@@ -403,18 +392,17 @@
 
     <!-- Contacts Section -->
     <section id="contacts" class="contacts">
-        <div class="contacts-map">
-            <div style="position:relative;overflow:hidden;width:100%;">
-              <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=37.678448%2C55.643739&mode=whatshere&z=17&whatshere%5Bpoint%5D=37.673942%2C55.643739" 
-                width="1920" 
-                height="700" 
-                frameborder="0" 
-                allowfullscreen="true"
-                style="border-radius:10px;"
-              ></iframe>
+        <div class="contacts-map" style="width: 100%;">
+            <div style="position:relative;overflow:hidden;width:100%;height: 700px;">
+                <iframe 
+                    src="https://yandex.ru/map-widget/v1/?ll=37.678448%2C55.643739&mode=whatshere&z=17&whatshere%5Bpoint%5D=37.673942%2C55.643739" 
+                    width="100%" 
+                    height="700" 
+                    frameborder="0" 
+                    allowfullscreen="true"
+                    style="border-radius:10px;"
+                ></iframe>
             </div>
-          </div>
         </div>
         <div class="contacts-container">
             <h1 class="contacts-title">Контакты</h1>
@@ -438,7 +426,7 @@
                         <h4>Московская область, г. Пушкин,<br>ул. Красноармейская, д. 16А</h4>
                     </div>
                 </div>
-
+    
                 <div class="contact-flex">
                     <div class="item-flex">
                         <img src="./images/mail.svg" alt="">
@@ -475,8 +463,8 @@
                     <a href="#" class="social-icon telegram"><img src="./images/telegram.svg" alt=""></a>
                 </div>
             </div>
-
-            <button class="btn primary-btn"><h4>Заказать звонок</h4></button>
+    
+            <a href="#contactModal" data-fancybox="contact"><button class="btn primary-btn"><h4>Заказать звонок</h4></button></a>
         </div>
     </section>
 
@@ -494,5 +482,113 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Contact Form (Hidden) -->
+    <div id="contactModal" style="display: none;">
+    <div class="modal-contact-form">
+        <h2>Форма связи</h2>
+        <h4>Мы перезвоним вам в ближайшее время</h4>
+        <form class="modal-form">
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <button type="submit" class="btn primary-btn">Отправить</button>
+        </form>
+    </div>
+</div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Add Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Инициализация Fancybox
+        Fancybox.bind('[data-fancybox="contact"]', {
+            dragToClose: false,
+            closeButton: "top",
+            keyboard: {
+                Escape: "close"
+            }
+        });
+        
+        const burgerToggle = document.getElementById('burgerToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        burgerToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                burgerToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+        
+        // Закрытие меню при клике вне его области
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && e.target !== burgerToggle) {
+                burgerToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // Инициализация Swiper для галереи
+        if (typeof Swiper !== 'undefined') {
+            new Swiper('.portfolio-gallery', {
+                freeMode: true,
+                mousewheel: {
+                    enabled: true,
+                    forceToAxis: true
+                },
+                grabCursor: true,
+                resistanceRatio: 0.5,
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 30
+                    }
+                }
+            });
+        }
+
+        // Маска для телефона
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0 && value[0] !== '7') {
+                    value = '7' + value;
+                }
+                let formattedValue = '';
+                if (value.length > 0) {
+                    formattedValue = '+7 (';
+                }
+                if (value.length > 1) {
+                    formattedValue += value.substring(1, Math.min(4, value.length));
+                }
+                if (value.length > 4) {
+                    formattedValue += ') ' + value.substring(4, Math.min(7, value.length));
+                }
+                if (value.length > 7) {
+                    formattedValue += '-' + value.substring(7, Math.min(9, value.length));
+                }
+                if (value.length > 9) {
+                    formattedValue += '-' + value.substring(9, Math.min(11, value.length));
+                }
+                e.target.value = formattedValue;
+            });
+        }
+    });
+</script>
 </body>
 </html>
